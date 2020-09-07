@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
+import './question.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
-
   // This is a Stateful Widget, createState method needs to be overwritten
   // The widget needs to go along a State child class sort of '{widget_name}State'
   // In order to simply change the state, setState((), {a function, or steps}) needs
@@ -15,6 +16,7 @@ class MyApp extends StatefulWidget {
     return _MyAppState();
   }
 }
+
 // Underscore indicates private (code style)
 class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
@@ -39,7 +41,7 @@ class _MyAppState extends State<MyApp> {
             ),
             body: Column(
               children: <Widget>[
-                Text(questions[_questionIndex]),
+                Question(questions[_questionIndex]),
                 RaisedButton(
                   child: Text("Answer 1"),
                   onPressed: _answerQuestion,
